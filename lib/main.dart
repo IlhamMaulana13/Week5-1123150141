@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "judul aplikasi",
+      title: "Judul Aplikasi",
       home: MyHome(),
     );
   }
@@ -34,55 +34,83 @@ class MyHome extends StatelessWidget {
           SizedBox(width: 20),
         ],
       ),
-
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        Container(
-      width: 100,
-      height: 100,
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 30, left: 20),
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Colors.blue, Colors.yellow]
-        ),
+          // Container pertama (teks)
+          Container(
+            width: 100,
+            height: 100,
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(top: 30, left: 20),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Colors.blue, Colors.yellow],
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Text(
+              "Ini adalah text di dalam container",
+              textAlign: TextAlign.center,
+            ),
+          ),
 
-        borderRadius: BorderRadius.circular(10.0),
+          // Container kedua (miring)
+          Container(
+            width: 170,
+            height: 150,
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(top: 30, left: 20),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Colors.red, Colors.white],
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            transform: Matrix4.rotationZ(0.1),
+            child: const Text(
+              "Ini adalah text dengan container miring",
+            ),
+          ),
 
+          // Container ketiga (gambar)
+            Container(
+              width: 160,
+              height: 160,
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 30, left: 20),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [Colors.purple, Colors.orange],
+                ),
+                borderRadius: BorderRadius.circular(15.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3), // ✅ diperbaiki
+                    spreadRadius: 3,
+                    blurRadius: 6,
+                    offset: const Offset(3, 3),
+                  ),
+                ],
+              ),
+              transform: Matrix4.rotationZ(0.1),
+              child: Image.asset(
+                'assets/images/image.png', // pastikan path benar
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+            ),
+        ],
       ),
-      child: Text("Ini adalah text didalam container"),
-
-      
-      ),
-      Container(
-      width: 100,
-      height: 100,
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 30, left: 20),
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Colors.red, Colors.white]
-        ),
-
-        borderRadius: BorderRadius.circular(10.0),
-
-      ),
-      child: Text("Ini King Emyu"),
-
-      
-      ),
-      ],
-      ),
-
-      
-      
     );
   }
 }
