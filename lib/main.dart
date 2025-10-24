@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,36 +9,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Title Aplikasi Latihan Container",
+      title: "judul aplikasi",
       home: MyHome(),
     );
   }
 }
 
-class MyHome extends StatefulWidget {
+class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
-  @override
-  State<MyHome> createState() => _MyHomeState();
-}
-
-class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ini title"),
-        backgroundColor: Colors.blue,
+        title: const Text("Dashboard"),
+        backgroundColor: const Color.fromARGB(255, 255, 7, 7),
         actions: const [
-          Icon(Icons.person),
-          SizedBox(width: 10),
-          Icon(Icons.settings), // Ganti dengan ikon yang valid
+          Icon(Icons.person, color: Colors.white),
+          SizedBox(width: 15),
+          Icon(Icons.account_tree)
         ],
       ),
-      body: const Center(
-        child: Text("Halo, ini halaman utama!"),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: const Column(
+            children: [],
+          ),
+        ),
       ),
     );
   }
