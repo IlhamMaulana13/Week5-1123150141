@@ -28,17 +28,17 @@ class MyHome extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 255, 7, 7),
         actions: const [
           Icon(Icons.person, color: Colors.white),
-          SizedBox(width: 15),
-          Icon(Icons.account_tree)
+          SizedBox(width: 10),
+          Icon(Icons.account_tree, color: Colors.white),
+          Icon(Icons.ac_unit, color: Colors.white),
+          SizedBox(width: 20),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(20.0),
-          child: const Column(
-            children: [],
-          ),
-        ),
+      body: Container(color: Colors.amberAccent,
+      width: double.infinity,
+      height: double.infinity,
+      alignment: Alignment.center,
+      child: Text("Ini adalah text didalam container"),
       ),
     );
   }
