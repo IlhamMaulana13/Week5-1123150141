@@ -34,12 +34,55 @@ class MyHome extends StatelessWidget {
           SizedBox(width: 20),
         ],
       ),
-      body: Container(color: Colors.amberAccent,
-      width: double.infinity,
-      height: double.infinity,
+
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        Container(
+      width: 100,
+      height: 100,
       alignment: Alignment.center,
-      child: Text("Ini adalah text didalam container"),
+      margin: EdgeInsets.only(top: 30, left: 20),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [Colors.blue, Colors.yellow]
+        ),
+
+        borderRadius: BorderRadius.circular(10.0),
+
       ),
+      child: Text("Ini adalah text didalam container"),
+
+      
+      ),
+      Container(
+      width: 100,
+      height: 100,
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(top: 30, left: 20),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [Colors.red, Colors.white]
+        ),
+
+        borderRadius: BorderRadius.circular(10.0),
+
+      ),
+      child: Text("Ini King Emyu"),
+
+      
+      ),
+      ],
+      ),
+
+      
+      
     );
   }
 }
